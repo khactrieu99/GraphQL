@@ -7,8 +7,8 @@ const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
 // dummy data
 var books = [
   { name: 'Name of the Wind', genre: 'Fantasy', id: '1'},
-  { name: 'The Final Empire', genre: 'Fantasy', is: '2'},
-  { name: 'The Long Earth', genre: 'Sci-Fi', id: '3'};
+  { name: 'The Final Empire', genre: 'Fantasy', id: '2'},
+  { name: 'The Long Earth', genre: 'Sci-Fi', id: '3'}
 ];
 
 
@@ -30,7 +30,7 @@ const RootQuery = new GraphQLObjectType({
       args: { id: {type: GraphQLString} },
       resolve(parent, args) {
         // code to get date from db / other source
-        return _.find(books, { id: agrs.id });
+        return _.find(books, { id: args.id });
       }
     }
   }
